@@ -6,9 +6,14 @@ However, given that the links provided pointed to *method* complition dataset th
 For that, I would need to create a dataset, similar to Python CodeXGLUE, having _signature, docstring, and body_ for each method. 
 
 Before I started with parsing the Kotlin files using Python, I need to familiarse myself with Kotlin files. 
-I considered the proposed project, however, I developed the mothod extraction on a smaller project and then ran it on the one proposed by you. 
+I first considered a smaller project ([this one](https://github.com/TheAlgorithms/Kotlin)) and developed the _kotlin method extraction_ based on this one. 
+To parse the files and create the kotlin method dataset, I decided to use regular expressions and code it in Python. I am aware of the shortcomings of this approach - as you can see from my Kotlin parser there are many methods that are ignored, because of a missing asterix or an extra line after the docstring. Some might argue that this approach is then prefered exactly because it extracts only "proper" code, written in accordance to rules. I am not the one to judge in this case. If time had allowed me, I would have taken a different approach - e.g. using IntelliJ IDEA and writing a plug-in that extracts the methods from the Kotlin files. 
 
-To parse the files and create the kotlin method dataset, I decided to use regular expressions and code it in Python. I am aware of the shortcomings of this approach - as you can see from my Kotlin parser there are many methods that are ignored, because of a missing asterix or an extra line after the docstring. Now some might argue that this approach is then prefered exactly because it extracts only "proper" code, written in accordance to rules. I am not the one to judge in this case. If time had allowed me, I would have taken a different approach - e.g. using IntelliJ IDEA and writing a plug-in that extracts the methods from the Kotlin files. 
+## How to make the _Kotlin method dataset_
+"""
+git clone https://github.com/JetBrains/kotlin.git
+python run 
+"""
 
 After creating the Kotlin dataset and downloading the Python one, I tried using the pretrained language model Phi 1.5. Important point of consideration is how would the result of the model be truncated. I found that the model generates the function I've asked for and then continues to generate code - giving an example or writing anotheer functions. 
 
