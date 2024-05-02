@@ -28,7 +28,7 @@ The simplest solution I thought of is to look at the indentation. Luckily, pytho
 
 Now that I have the "ground truth" from the dataset, and a generated code, the next big problem is to consider how to compare the solutions. This is a big task/problem that requires research by itself. While reading about codeXGLUE, I noticed that the evaluator used in the project makes use of a python libabry _fuzzywuzzy_ [link](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/Method-Generation#evaluator)
 
-Run the code in file ```model_phi-1-5.py``` to see how the model manages to generate code; commenting and uncommenting depending on weather you want python or kotlin code generation. 
+Run the code in file ```model_phi-1-5.py``` to see how the model manages to generate code; commenting and uncommenting depending on whether you want python or kotlin code generation. 
 
 The next step would be to fine-tune it. This is done by training the model. For that I need to separate the ```big_kotlin.jsonl``` to traning, development, and testing parts, and use the _fuzzywuzzy_ as a loss function. Due to computational and time limitations I did not implement this.
 
