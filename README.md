@@ -25,8 +25,5 @@ Main points for improvement:
 ## Code 
 
 Start by running
-'git clone https://huggingface.co/datasets/microsoft/codexglue_method_generation'
-
-Then do 
-
-pip freeze > requirements.txt
+git clone https://huggingface.co/datasets/microsoft/codexglue_method_generation
+git clone https://github.com/JetBrains/kotlin.git
